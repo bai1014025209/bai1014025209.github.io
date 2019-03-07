@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>IDEA启动tomcat后，无法访问tomcat主页 | Hve Notes</title>
+<link rel="shortcut icon" href="https://bai1014025209.github.io/favicon.ico">
+<link rel="stylesheet" href="https://bai1014025209.github.io/styles/main.css">
+
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://bai1014025209.github.io">
+  <img class="avatar" src="https://bai1014025209.github.io/images/avatar.png" alt="" width="80px" height="80px">
+  </a>
+  <h1 class="site-title">
+    Hve Notes
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags/" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about/" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+</div>
+
+      
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              IDEA启动tomcat后，无法访问tomcat主页
+            </h2>
+            <div class="post-info">
+              <time class="post-time">
+                · 2019-03-04 ·
+              </time>
+              
+                <a href="https://bai1014025209.github.io/tag/j9N9RCG_V" class="post-tags">
+                  # IDEA使用
+                </a>
+              
+                <a href="https://bai1014025209.github.io/tag/bDuvK5oMb" class="post-tags">
+                  # Tomcat使用
+                </a>
+              
+            </div>
+            <div class="post-content">
+              <p>上网查找后，终于找到了一个解决办法。<br>        该问题出现是因为：IDEA工程输出目录不是Tomcat的Apache-tomcat的webapps的目录下，而是自己设定的工作目录下的target目录。所以就相当于，IDEA在设定的工作目录下的target目录虚拟了一个Tomcat，而在设定的工作目录下的target目录下又没有Tomcat首页的工程。而此时并没有把Tomcat首页的工程部署到服务器，所以就访问不到Tomcat首页，而访问到的是我们项目里的其他页面信息。</p>
+<p>解决办法：将Tomcat的首页的工程部署到Tomcat服务器上，部署步骤如下：</p>
+<p>选择菜单栏“Run--&gt;Edit Configuration...--&gt;Deployment”,选择右上角绿色“+”，选择“External Source...”，将Apache-tomcat-8.0.33的webapps目录下的ROOT文件夹选中，点击OK，及完成Tomcat的首页的工程的部署。<br>选择ROOT文件后Application Context 可不填写，默认即可。</p>
+<p>本文解决办法参考：<a href="http://www.myexception.cn/other/1998827.html">http://www.myexception.cn/other/1998827.html</a></p>
+
+            </div>
+          </article>
+        </div>
+    
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://bai1014025209.github.io/post/tomcat-de-an-zhuang-yu-pei-zhi-huan-jing-bian-liang">
+              <h3 class="post-title">
+                Tomcat的安装与配置环境变量
+              </h3>
+            </a>
+          </div>  
+        
+
+        
+    
+        <div class="site-footer">
+  Powered by Hve Notes
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad()
+</script>
+
+      </div>
+    </div>
+  </body>
+</html>
