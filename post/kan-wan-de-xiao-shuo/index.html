@@ -1,104 +1,145 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-<meta name="description" content="" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" >
+
 <title>看完的小说 | Hve Notes</title>
+<meta name="description" content="温故而知新">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
 <link rel="shortcut icon" href="https://bai1014025209.github.io/favicon.ico">
 <link rel="stylesheet" href="https://bai1014025209.github.io/styles/main.css">
 
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
-<script src="https://cdn.bootcss.com/moment.js/2.23.0/moment.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
 
   </head>
   <body>
-    <div class="main">
-      <div class="main-content">
-        <div class="site-header">
-  <a href="https://bai1014025209.github.io">
-  <img class="avatar" src="https://bai1014025209.github.io/images/avatar.png" alt="" width="80px" height="80px">
-  </a>
-  <h1 class="site-title">
-    Hve Notes
-  </h1>
-  <p class="site-description">
-    温故而知新
-  </p>
-  <div class="menu-container">
-    
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://bai1014025209.github.io">
+        <img src="https://bai1014025209.github.io/images/avatar.png" class="site-logo">
+        <h1 class="site-title">Hve Notes</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
       
-        <a href="/" class="menu">
-          首页
-        </a>
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
       
-    
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
       
-        <a href="/archives" class="menu">
-          归档
-        </a>
+        
+          <a href="/tags/" class="site-nav">
+            标签
+          </a>
+        
       
-    
+        
+          <a href="/post/about/" class="site-nav">
+            关于
+          </a>
+        
       
-        <a href="/tags/" class="menu">
-          标签
-        </a>
-      
-    
-      
-        <a href="/post/about/" class="menu">
-          关于
-        </a>
-      
-    
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by Hve Notes
+    </div>
   </div>
 </div>
 
-      
-        <div class="post-detail">
-          <article class="post">
-            <h2 class="post-title">
-              看完的小说
-            </h2>
-            <div class="post-info">
-              <time class="post-time">
-                · 2019-03-04 ·
-              </time>
-              
-                <a href="https://bai1014025209.github.io/tag/bF5czd_Vj" class="post-tags">
-                  # 小说
-                </a>
-              
-            </div>
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">看完的小说</h2>
+            <div class="post-date">2019-03-04</div>
+            
             <div class="post-content">
-              <p>星戒 作者：空神<br>萌军机娘 作者：啪啪桑<br>萌军舰娘 作者：啪啪桑<br>恶魔高校之无尽掠夺 作者：南宫寒五<br>小小魔王 作者：肥面包<br>魔王神官和勇者美少女Ⅰ+Ⅱ+Ⅲ 作者：肥面包<br>魔王神官II 作者：肥面包<br>萌萌山海经 作者：肥面包<br>我的二战不可能这么萌  作者：月面<br>舰娘之火力提督 作者：紫色之翼<br>娘山108星少女 作者：她酷的像冰</p>
+              <p>星戒 作者：空神
+萌军机娘 作者：啪啪桑
+萌军舰娘 作者：啪啪桑
+恶魔高校之无尽掠夺 作者：南宫寒五
+小小魔王 作者：肥面包
+魔王神官和勇者美少女Ⅰ+Ⅱ+Ⅲ 作者：肥面包
+魔王神官II 作者：肥面包
+萌萌山海经 作者：肥面包
+我的二战不可能这么萌  作者：月面
+舰娘之火力提督 作者：紫色之翼
+娘山108星少女 作者：她酷的像冰</p>
 
             </div>
-          </article>
+            
+              <div class="tag-container">
+                
+                  <a href="https://bai1014025209.github.io/tag/bF5czd_Vj" class="tag">
+                    小说
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://bai1014025209.github.io/post/hello-hve-notes">
+                  <h3 class="post-title">
+                    Hello Hve Notes
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
         </div>
-    
-        
-          <div class="next-post">
-            <div class="next">下一篇</div>
-            <a href="https://bai1014025209.github.io/post/hello-hve-notes">
-              <h3 class="post-title">
-                Hello Hve Notes
-              </h3>
-            </a>
-          </div>  
-        
-
-        
-    
-        <div class="site-footer">
-  Powered by Hve Notes
-</div>
-
-<script>
-  hljs.initHighlightingOnLoad()
-</script>
-
       </div>
     </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
   </body>
 </html>
