@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>标签列表 | Hve Notes</title>
+<title>javeEE项目网页资源的方法（部分东西基于SSM） | Hve Notes</title>
 <meta name="description" content="温故而知新">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -75,22 +75,54 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <h2 class="tag-list-title">标签列表</h2>
-          <div class="tags-container">
+          <div class="post-detail">
+            <h2 class="post-title">javeEE项目网页资源的方法（部分东西基于SSM）</h2>
+            <div class="post-date">2019-03-10</div>
             
-              <a class="tag" href="https://bai1014025209.github.io/tag/wLJ2hnWXj">计算机基础</a>
+            <div class="post-content">
+              <p>1.网页需要用到的js脚本，css脚本，图片直接放在webapp目录下即可
+2.网页用到的页面，可以考虑放在web-inf目录下
+因为在浏览器直接访问web-inf目录下的文件是无法访问的。故保证了网页的安全性
+但无法访问上级目录下的资源文件
+资源文件路径改为{pageContext.request.contextPath}/资源文件路径
+								在pom.xml中引入servlet-api/jsp
+										<!-- 导入servlet-api/jsp -->
+								<dependencies>
+												<dependency>
+													<groupId>javax.servlet</groupId>
+													<artifactId>javax.servlet-api</artifactId>
+												  <version>3.1.0</version>
+												  <scope>provided</scope>   因为在打成war包时候不需要打入
+											 </dependency>
+											 <!-- https://mvnrepository.com/artifact/javax.servlet.jsp/javax.servlet.jsp-api -->
+											 <dependency>
+													  <groupId>javax.servlet.jsp</groupId>
+												    <artifactId>javax.servlet.jsp-api</artifactId>
+													  <version>2.3.1</version>
+													  <scope>provided</scope>
+											 </dependency>
+								</dependencies>
+3.需要在springmvc.xml下的视图解析配置路径修改
+4.在页面中引用别的页面
+				通过控制器跳转（写控制器跳转方法，单纯跳转页面），然后在页面的src中{pageContext.request.contextPath}/controller类注释名/方法注释名.do</p>
+
+            </div>
             
-              <a class="tag" href="https://bai1014025209.github.io/tag/dRb1xvVSL">JAVA基础</a>
             
-              <a class="tag" href="https://bai1014025209.github.io/tag/f4ivNFmbV">Maven</a>
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://bai1014025209.github.io/post/maven-ming-ling">
+                  <h3 class="post-title">
+                    maven 命令
+                  </h3>
+                </a>
+              </div>
             
-              <a class="tag" href="https://bai1014025209.github.io/tag/j9N9RCG_V">IDEA使用</a>
+
             
-              <a class="tag" href="https://bai1014025209.github.io/tag/bDuvK5oMb">Tomcat使用</a>
-            
-              <a class="tag" href="https://bai1014025209.github.io/tag/bF5czd_Vj">小说</a>
-            
+
           </div>
+
         </div>
       </div>
     </div>

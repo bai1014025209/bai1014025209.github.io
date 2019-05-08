@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Tomcat的安装与配置环境变量 | Hve Notes</title>
+<meta name="description" content="温故而知新">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="shortcut icon" href="https://bai1014025209.github.io/favicon.ico">
+<link rel="stylesheet" href="https://bai1014025209.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://bai1014025209.github.io">
+        <img src="https://bai1014025209.github.io/images/avatar.png" class="site-logo">
+        <h1 class="site-title">Hve Notes</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags/" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about/" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by Hve Notes
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Tomcat的安装与配置环境变量</h2>
+            <div class="post-date">2019-03-04</div>
+            
+            <div class="post-content">
+              <p>一、下载tomcat
+官网网址：https://tomcat.apache.org/</p>
+<p>二、解压缩</p>
+<p>三、配置Tomcat环境变量
+1，新建变量名：CATALINA_HOME，变量值：E:\apache-tomcat-9.0.0.M26
+2，打开PATH，添加变量：;%CATALINA_HOME%\bin</p>
+<p>四、启动Tomcat服务
+方法两种：
+1，方法一：进入到tomcat的安装目录bin目录下执行cmd命令，然后输入命令：startup，出现如下对话框，表明服务启动成功。
+2，方法二：到tomcat的安装目录E:\apache-tomcat-9.0.0.M26\bin目录下点击startup.bat</p>
+<p>五、测试Tomcat
+打开浏览器，在地址栏中输入http://localhost:8080
+回车，如果看到Tomcat自带的一个JSP页面，说明你的JDK和Tomcat已搭建成功。</p>
+<p>在此说明下,端口8080可以在tomcat安装目录\conf下server.xml把8080修改成自己需要的端口，根据自己的情况修改</p>
+<p>注意事项
+1，JAVA_HOME中的路径不能用分号结尾，如C:\Program     Files\Java\jdk1.8.0_121。
+2，CATALINA_HOME，TOMCAT_HOME中的路径不能以“\”结尾。
+3，JAVA_HOME的路径一定不要写成了JRE的路径。
+4，在环境变量中修改添加变量时，一定要注意分号、空格，是否有多余的字母。作者就是因为path路径中多了一个字母，怎么都配置不成功。如果配置不成功，一定要反复检查。
+以上错误，非常容易出现错误：CATALINA_HOME或是JAVA_HOME没有配置好。如错误提示“The CATALINA_HOME environment variable is not defined correctly”</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://bai1014025209.github.io/tag/bDuvK5oMb" class="tag">
+                    Tomcat使用
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://bai1014025209.github.io/post/kan-wan-de-xiao-shuo">
+                  <h3 class="post-title">
+                    看完的小说
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>

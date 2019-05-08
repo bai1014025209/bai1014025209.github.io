@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>标签列表 | Hve Notes</title>
+<title>IDEA启动tomcat后，无法访问tomcat主页 | Hve Notes</title>
 <meta name="description" content="温故而知新">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -75,22 +75,47 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          <h2 class="tag-list-title">标签列表</h2>
-          <div class="tags-container">
+          <div class="post-detail">
+            <h2 class="post-title">IDEA启动tomcat后，无法访问tomcat主页</h2>
+            <div class="post-date">2019-03-04</div>
             
-              <a class="tag" href="https://bai1014025209.github.io/tag/wLJ2hnWXj">计算机基础</a>
+            <div class="post-content">
+              <p>上网查找后，终于找到了一个解决办法。
+该问题出现是因为：IDEA工程输出目录不是Tomcat的Apache-tomcat的webapps的目录下，而是自己设定的工作目录下的target目录。所以就相当于，IDEA在设定的工作目录下的target目录虚拟了一个Tomcat，而在设定的工作目录下的target目录下又没有Tomcat首页的工程。而此时并没有把Tomcat首页的工程部署到服务器，所以就访问不到Tomcat首页，而访问到的是我们项目里的其他页面信息。</p>
+<p>解决办法：将Tomcat的首页的工程部署到Tomcat服务器上，部署步骤如下：</p>
+<p>选择菜单栏“Run--&gt;Edit Configuration...--&gt;Deployment”,选择右上角绿色“+”，选择“External Source...”，将Apache-tomcat-8.0.33的webapps目录下的ROOT文件夹选中，点击OK，及完成Tomcat的首页的工程的部署。
+选择ROOT文件后Application Context 可不填写，默认即可。</p>
+<p>本文解决办法参考：http://www.myexception.cn/other/1998827.html</p>
+
+            </div>
             
-              <a class="tag" href="https://bai1014025209.github.io/tag/dRb1xvVSL">JAVA基础</a>
+              <div class="tag-container">
+                
+                  <a href="https://bai1014025209.github.io/tag/j9N9RCG_V" class="tag">
+                    IDEA使用
+                  </a>
+                
+                  <a href="https://bai1014025209.github.io/tag/bDuvK5oMb" class="tag">
+                    Tomcat使用
+                  </a>
+                
+              </div>
             
-              <a class="tag" href="https://bai1014025209.github.io/tag/f4ivNFmbV">Maven</a>
             
-              <a class="tag" href="https://bai1014025209.github.io/tag/j9N9RCG_V">IDEA使用</a>
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://bai1014025209.github.io/post/tomcat-de-an-zhuang-yu-pei-zhi-huan-jing-bian-liang">
+                  <h3 class="post-title">
+                    Tomcat的安装与配置环境变量
+                  </h3>
+                </a>
+              </div>
             
-              <a class="tag" href="https://bai1014025209.github.io/tag/bDuvK5oMb">Tomcat使用</a>
+
             
-              <a class="tag" href="https://bai1014025209.github.io/tag/bF5czd_Vj">小说</a>
-            
+
           </div>
+
         </div>
       </div>
     </div>
